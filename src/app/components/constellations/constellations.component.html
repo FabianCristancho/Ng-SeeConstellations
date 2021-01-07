@@ -1,0 +1,21 @@
+<body>
+  <div class="container">
+    <h1 class="text-center text-light m-3 title">{{ title | uppercase}}</h1>
+    <hr>
+    <div class="row row-cols-1 row-cols-md-3">
+      <div class="col mb-4" *ngFor="let constellation of constellations; let i = index">
+        <div class="card">
+          <img [src]="constellation.img" class="card-img-top img-fluid" alt="constellation">
+          <div class="card-body custom-card-body">
+            <h5 class="card-title title" style="color: #090633">{{ constellation.name }}</h5>
+            <p class="card-text text-justify text-content">{{ constellation.description }}</p>
+          </div>
+          <div class="card-footer">
+            <button (click)="seeConstellation(i)" class="btn btn-block">See More...</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<app-footer class="footer"></app-footer>

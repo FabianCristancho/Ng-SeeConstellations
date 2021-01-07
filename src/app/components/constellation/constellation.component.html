@@ -1,0 +1,36 @@
+<body>
+    <div class="container">
+        <h1 class="text-center text-light m-3 title">{{constellation.name}}</h1>
+    <hr>
+    <div class="row">
+        <div class="col-md-4">
+            <img [src]="constellation.imgSymbol" class="img-fluid" [alt]="constellation.name">
+            <div class="stars mt-3">
+                <h5 class="title">Estrellas</h5>
+                <ul class="list-group">
+                    <li class="list-group-item text-content" *ngFor="let star of constellation.stars">{{ star }}</li>
+                </ul>
+            </div>
+            <a [routerLink]="['/constellations']" class="btn btn-outline-light btn-block mt-2 mb-2">Regresar</a>
+        </div>
+        <div class="col-md-8">
+            <img [src]="constellation.imgInfo" class="img-fluid" [alt]="constellation.name">
+            <br>
+            <div class="description mt-3">
+                <h4 class="title">Descripción</h4>
+                <div class="content">
+                    <p class="text-justify p-2 text-content">{{ constellation.description }}</p>
+                </div>
+            </div>
+            
+            <div class="history mt-3">
+                <h4 class="title">Historia</h4>
+                <div class="content">
+                    <p class="text-justify p-2 text-content">{{ constellation.history }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+<app-footer class="footer"></app-footer>

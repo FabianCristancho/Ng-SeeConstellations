@@ -1,0 +1,27 @@
+<div class="container">
+  <h3 class="m-3" style="color: #f1f2f6;"> Buscando: <small>{{ value }}</small> </h3>
+  <hr>
+  <div class="row animated fadeIn fast" *ngIf="constellations.length == 0">
+    <div class="col-md-12">
+      <div class="alert alert-info" role="alert">
+        No se encuentran resultados con el término: {{ value }}
+      </div>
+    </div>
+  </div>
+  <div class="row row-cols-1 row-cols-md-3">
+    <div class="col mb-4" *ngFor="let constellation of constellations; let i = index">
+      <div class="card">
+        <img [src]="constellation.img" class="card-img-top img-fluid" alt="constellation">
+        <div class="card-body">
+          <h5 class="card-title title" style="color: #090633">{{ constellation.name }}</h5>
+          <p class="card-text text-justify text-content">{{ constellation.description }}</p>
+        </div>
+        <div class="card-footer">
+          <button (click)="seeConstellation(constellation.idx)" class="btn btn-info btn-block">Más
+            información...</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer class="footer"></app-footer>
